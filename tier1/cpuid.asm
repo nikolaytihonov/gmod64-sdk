@@ -1,0 +1,23 @@
+PUBLIC __cpuid
+
+.CODE
+
+__cpuid	PROC
+	PUSH RBX
+	PUSH RDX
+	PUSH RCX
+
+	XOR RAX,RAX
+	INC RAX
+	CPUID
+	MOV RAX,RDX
+
+	POP RCX
+	POP RDX
+	POP RBX
+
+	RET
+
+__cpuid	ENDP
+
+		END
